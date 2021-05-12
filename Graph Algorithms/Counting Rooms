@@ -1,0 +1,54 @@
+#include<bits/stdc++.h>
+using namespace std ;
+char a[1000][1000]  ; 
+int r,c ; 
+bool floodfill(int i , int j ){
+    if(i<0 or j<0 or j>=c or i>=r){
+        return false ; 
+    }
+    if(a[i][j]=='.'){
+        a[i][j]='X' ; 
+        floodfill(i,j-1) ; 
+        floodfill(i,j+1) ; 
+        floodfill(i-1,j);
+        floodfill(i+1,j) ; 
+        return true ; 
+    }else{
+        return false ; 
+    }
+}
+int main(){
+#ifndef ONLINE_JUDGE
+freopen("input.txt","r",stdin);
+freopen("output.txt","w",stdout);
+ #endif
+
+cin>>r>>c ; 
+ for(int i = 0 ; i<r ; i++){
+     for(int j = 0 ; j<c ; j++){
+         cin>>a[i][j] ; 
+     }
+ }
+//   for(int i = 0 ; i<r ; i++){
+//      for(int j = 0 ; j<c ; j++){
+//          cout<<a[i][j];
+//      }
+//      cout<<endl ; 
+//  }
+ int cnt = 0 ; 
+  for(int i = 0 ; i<r ; i++){
+     for(int j = 0 ; j<c ; j++){
+       if(floodfill(i,j)){
+           cnt++ ; 
+       } 
+     }
+ }
+//  for(int i = 0 ; i<r ; i++){
+//      for(int j = 0 ; j<c ; j++){
+//          cout<<a[i][j];
+//      }
+//      cout<<endl ; 
+//  }
+ cout<<cnt<<endl ; 
+return 0;
+}
