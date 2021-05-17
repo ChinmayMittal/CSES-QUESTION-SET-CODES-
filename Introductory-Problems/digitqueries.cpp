@@ -32,7 +32,7 @@ while(q--){
             pos = mid ; 
             s = mid+1 ; 
         }
-    }
+    } 
     long long int t =n- digits_taken_till_n(pos) ; 
     string sans = to_string(pos+1) ; 
      cout<<sans[t-1]<<endl ;
