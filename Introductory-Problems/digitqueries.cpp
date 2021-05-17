@@ -16,6 +16,8 @@ freopen("output.txt","w",stdout);
  #endif
 int q ; 
 cin>>q ;  
+   // the approach invoolves finding a possible number for which all digits taken to form the numbers from 1- possible are less than the query hence the number to which the digit in the position 
+    // of the query belongs is possible +1 
 while(q--){
     long long int n ; 
     cin>>n ; 
